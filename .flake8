@@ -1,0 +1,4 @@
+[flake8]
+exclude = venv/*
+          bgg/bgg/settings.py
+max-line-length = 120
