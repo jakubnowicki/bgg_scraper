@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.7
+    environment:
+      PIPENV_VENV_IN_PROJECT: true
+    steps:
+      - checkout
+      - run:
+          name: Print the Current Time (python)
+          command: date
+      - run:
+          name: install dependencies
+          command: |
+            cd ~/project
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install pipenv
+            pipenv install --dev
+      - run:
+          name: Lint Python code
+          command: |
+            . ~/project/venv/bin/activate
+            flake8 ~/project
