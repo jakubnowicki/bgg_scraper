@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 flake8 = "*"
+v = {editable = true,version = "*"}
 
 [packages]
 asn1crypto = "==0.24.0"
