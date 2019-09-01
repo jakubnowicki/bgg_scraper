@@ -3,5 +3,6 @@
 python3 -m venv venv
 source venv/bin/activate
 pip install pipenv
-test -f Pipfile && pipenv install --dev
+[ -f Pipfile ] && { echo "Pipfile exists, installing dependencies"; pipenv install --dev ;}
 deactivate
+echo "Setup finished"
