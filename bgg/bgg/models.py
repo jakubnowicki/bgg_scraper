@@ -1,7 +1,8 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Float, Date, ForeignKey, create_engine
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, create_engine
 from sqlalchemy.orm import relationship
 import os
+
 # from scrapy.utils.project import get_project_settings
 
 DeclarativeBase = declarative_base()
@@ -10,8 +11,8 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 def db_connect():
     return create_engine('sqlite:///' + os.path.join(basedir) +
-                                                    '/boardgames.db',
-                                                    echo=True)
+                         '/boardgames.db',
+                         echo=True)
 
 
 def create_table(engine):

@@ -42,11 +42,10 @@ class DBWriter(object):
             session.add(boardgamedb)
             session.add(dailyratingdb)
             session.commit()
-        except:
+        except Exception:
             session.rollback()
             raise
         finally:
             session.close()
 
         return item
-
