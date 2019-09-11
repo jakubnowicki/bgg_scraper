@@ -23,6 +23,7 @@ class DBWriter(object):
         game_id = item['image'].split('/')[2]
 
         session = self.Session()
+        game = session.query(Boardgame).filter_by(id=game_id).first()
 
         boardgamedb = Boardgame()
         boardgamedb.id = game_id
@@ -39,7 +40,8 @@ class DBWriter(object):
         dailyratingdb.timestamp = item['timestamp']
 
         try:
-            session.add(boardgamedb)
+            if game is None:
+                session.add(boardgamedb)
             session.add(dailyratingdb)
             session.commit()
         except Exception:
