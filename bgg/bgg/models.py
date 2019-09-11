@@ -1,6 +1,6 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Float, Date, ForeignKey, create_engine
-# from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship
 import os
 # from scrapy.utils.project import get_project_settings
 
@@ -26,7 +26,7 @@ class Boardgame(DeclarativeBase):
     image = Column(String)
     year = Column(Integer)
 
-    # daily_rating = relationship("DailyRating", back_populates="boardgames")
+    daily_ratings = relationship("DailyRating", backref="boardgame")
 
     def __repr__(self):
         return self.name
