@@ -1,3 +1,8 @@
 .idea
 venv
 .vscode
+/bgg/bgg/boardgames.db
+
+bgg/bgg/__pycache__/
+
+bgg/bgg/spiders/__pycache__/
