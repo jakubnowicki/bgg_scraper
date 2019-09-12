@@ -37,7 +37,6 @@ class DBWriter(object):
         dailyratingdb.geek_rating = item['geek_rating']
         dailyratingdb.avg_rating = item['avg_rating']
         dailyratingdb.num_voters = item['num_voters']
-        dailyratingdb.timestamp = item['timestamp']
 
         try:
             if game is None:

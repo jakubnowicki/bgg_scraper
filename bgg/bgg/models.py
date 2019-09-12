@@ -1,7 +1,8 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Float, ForeignKey, create_engine
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, Date, create_engine
 from sqlalchemy.orm import relationship
 import os
+from datetime import date
 
 # from scrapy.utils.project import get_project_settings
 
@@ -42,7 +43,7 @@ class DailyRating(DeclarativeBase):
     geek_rating = Column(Float)
     avg_rating = Column(Float)
     num_voters = Column(Integer)
-    timestamp = Column(String)
+    timestamp = Column(Date, default=date.today())
 
     # boardgame = relationship("Boardgame", back_populates="daily_rating")
 
