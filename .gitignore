@@ -21,6 +21,7 @@ venv
 /.envrc
 bgg/__pycache__/
 bgg/spiders/__pycache__/
+node_modules/
 
 # Serverless directories
 .serverless
