@@ -4,15 +4,16 @@ from sqlalchemy.orm import relationship
 import os
 from datetime import date
 
-# from scrapy.utils.project import get_project_settings
 
 DeclarativeBase = declarative_base()
 basedir = os.path.abspath(os.path.dirname(__file__))
+postgres_uri = f"postgresql+psycopg2://{os.environ['DB_USER']}:" \
+               f"{os.environ['DB_PASSWORD']}@{os.environ['DB_HOST']}:" \
+               f"{os.environ['DB_PORT']}/{os.environ['DB_NAME']}"
 
 
 def db_connect():
-    return create_engine('sqlite:///' + os.path.join(basedir) +
-                         '/boardgames.db',
+    return create_engine(postgres_uri,
                          echo=True)
 
 
@@ -44,8 +45,6 @@ class DailyRating(DeclarativeBase):
     avg_rating = Column(Float)
     num_voters = Column(Integer)
     timestamp = Column(Date, default=date.today())
-
-    # boardgame = relationship("Boardgame", back_populates="daily_rating")
 
     def __repr__(self):
         return self.id

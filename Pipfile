@@ -39,6 +39,7 @@ Twisted = "==19.7.0"
 "zope.interface" = "==4.6.0"
 sqlalchemy = "*"
 alembic = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.6"

@@ -6,3 +6,4 @@ venv
 bgg/bgg/__pycache__/
 
 bgg/bgg/spiders/__pycache__/
+/.envrc

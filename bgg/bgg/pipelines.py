@@ -11,10 +11,6 @@ from bgg.models import db_connect, create_table, Boardgame, DailyRating
 
 class DBWriter(object):
     def __init__(self):
-        """
-        Initializes database connection and sessionmaker.
-        Creates table.
-        """
         engine = db_connect()
         create_table(engine)
         self.Session = sessionmaker(bind=engine)
