@@ -7,6 +7,14 @@ class BggListSpider(scrapy.Spider):
     start_urls = [
             'https://boardgamegeek.com/browse/boardgame',
             'https://boardgamegeek.com/browse/boardgame/page/2',
+            'https://boardgamegeek.com/browse/boardgame/page/3',
+            'https://boardgamegeek.com/browse/boardgame/page/4',
+            'https://boardgamegeek.com/browse/boardgame/page/5',
+            'https://boardgamegeek.com/browse/boardgame/page/6',
+            'https://boardgamegeek.com/browse/boardgame/page/7',
+            'https://boardgamegeek.com/browse/boardgame/page/8',
+            'https://boardgamegeek.com/browse/boardgame/page/9',
+            'https://boardgamegeek.com/browse/boardgame/page/10'
         ]
 
     def parse(self, response):
